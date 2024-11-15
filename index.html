@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Elona's Sea Teacher Journey</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/unib.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <style>
+    /* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Montserrat",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
+}
+
+.logo {
+  width:150px; /* Sesuaikan nilai lebar sesuai keinginan Anda */
+  height: auto; /* Agar tinggi gambar menyesuaikan secara proporsional */
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: #edd79e; /* Background color for the entire website, including individual sections */
+  --default-color: #000000; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #F2994A; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #D8B7F2; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #555555;  /* The default color of the main navmenu links */
+  --nav-hover-color: #50d8af; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #555555; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #50d8af; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+  --background-color: #f9f9f9;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #F2C2B7;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #0e2d89;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+.center-image img {
+  max-width: 100%; /* Ensure the image is responsive */
+  height: auto;
+}
+/* PHP Email Form Messages
+------------------------------*/
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  color: var(--default-color);
+  transition: all 0.5s;
+  z-index: 997;
+  background-color: var(--background-color);
+}
+
+.header .topbar {
+  background-color: var(--background-color);
+  height: 40px;
+  padding: 0;
+  font-size: 14px;
+  transition: all 0.5s;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.header .topbar .contact-info i {
+  font-style: normal;
+  color: var(--accent-color);
+}
+
+.header .topbar .contact-info i a,
+.header .topbar .contact-info i span {
+  padding-left: 5px;
+  color: var(--default-color);
+}
+
+@media (max-width: 575px) {
+
+  .header .topbar .contact-info i a,
+  .header .topbar .contact-info i span {
+    font-size: 13px;
+  }
+}
+
+.header .topbar .contact-info i a {
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.header .topbar .contact-info i a:hover {
+  color: var(--contrast-color);
+  text-decoration: underline;
+}
+
+.header .topbar .social-links a {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  line-height: 0;
+  transition: 0.3s;
+  margin-left: 20px;
+}
+
+.header .topbar .social-links a:hover {
+  color: var(--accent-color);
+}
+
+.header .branding {
+  min-height: 60px;
+  padding: 10px 0;
+}
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo img {
+  max-height: 36px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.scrolled .header {
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    padding: 18px 15px;
+    font-size: 15px;
+    font-family: var(--nav-font);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 14px;
+    top: 130%;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    color: var(--nav-dropdown-color);
+  }
+
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover>a {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: -90%;
+    visibility: hidden;
+  }
+
+  .navmenu .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    visibility: visible;
+  }
+}
+
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--nav-mobile-background-color);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 10px 20px;
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
+
+  .navmenu a i:hover,
+  .navmenu a:focus i:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .active i,
+  .navmenu .active:focus i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(180deg);
+  }
+
+  .navmenu .dropdown ul {
+    position: static;
+    display: none;
+    z-index: 99;
+    padding: 10px 0;
+    margin: 10px 20px;
+    background-color: var(--nav-dropdown-background-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: none;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navmenu .dropdown ul ul {
+    background-color: rgba(33, 37, 41, 0.1);
+  }
+
+  .navmenu .dropdown>.dropdown-active {
+    display: block;
+    background-color: rgba(33, 37, 41, 0.03);
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+    z-index: 9999;
+  }
+
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+}
+
+.footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.footer p {
+  font-size: 15;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.footer .social-links {
+  margin: 0 0 30px 0;
+}
+
+.footer .social-links a {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  line-height: 1;
+  margin: 0 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  text-decoration: none;
+}
+
+.footer .copyright {
+  padding-top: 25px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .credits {
+  font-size: 13px;
+  padding-top: 5px;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  position: relative;
+}
+
+.page-title .heading {
+  padding: 80px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.page-title .heading h1 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.page-title nav {
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  padding: 20px 0;
+}
+
+.page-title nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.page-title nav ol li+li {
+  padding-left: 10px;
+}
+
+.page-title nav ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 118px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+
+  section,
+  .section {
+    scroll-margin-top: 100px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  min-height: 70vh;
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero .info {
+  position: relative;
+  inset: 0;
+  z-index: 3;
+  padding: 140px 0 60px 0;
+}
+
+@media (max-width: 768px),
+(max-height: 480px) {
+  .hero .info {
+    padding: 100px 50px 60px 50px;
+  }
+}
+
+.hero .info h2 {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  font-size: 72px;
+  font-weight: 700;
+  position: relative;
+}
+
+.hero .info h2 span {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.hero .info h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .hero .info h2 {
+    font-size: 36px;
+  }
+}
+
+.hero .info p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-size: 18px;
+}
+
+.hero .info .btn-get-started {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin: 10px;
+}
+
+.hero .info .btn-get-started:hover {
+  background: var(--surface-color);
+  color: var(--accent-color);
+}
+
+.hero .carousel {
+  inset: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.hero .carousel-item {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition-duration: 0.4s;
+}
+
+.hero .carousel-item img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero .carousel-item::before {
+  content: "";
+  background-color: color-mix(in srgb, var(--background-color), transparent 30%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero .carousel-control-prev {
+  justify-content: start;
+}
+
+@media (min-width: 640px) {
+  .hero .carousel-control-prev {
+    padding-left: 15px;
+  }
+}
+
+.hero .carousel-control-next {
+  justify-content: end;
+}
+
+@media (min-width: 640px) {
+  .hero .carousel-control-next {
+    padding-right: 15px;
+  }
+}
+
+.hero .carousel-control-next-icon,
+.hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 26px;
+  line-height: 0;
+  background: color-mix(in srgb, var(--surface-color), transparent 20%);
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  border-radius: 50px;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .carousel-control-prev,
+.hero .carousel-control-next {
+  z-index: 3;
+  transition: 0.3s;
+}
+
+.hero .carousel-control-prev:focus,
+.hero .carousel-control-next:focus {
+  opacity: 0.5;
+}
+
+.hero .carousel-control-prev:hover,
+.hero .carousel-control-next:hover {
+  opacity: 0.9;
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .content h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.about .content .fst-italic {
+  color: color-mix(in srgb, var(--default-color), var(--contrast-color) 50%);
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding: 10px 0 0 0;
+  display: flex;
+}
+
+.about .content ul i {
+  color: var(--accent-color);
+  margin-right: 0.5rem;
+  line-height: 1.2;
+  font-size: 1.25rem;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services .service-item {
+  background-color: var(--surface-color);
+  padding: 30px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  transition: 0.3s;
+}
+
+.services .service-item .icon {
+  font-size: 36px;
+  line-height: 0;
+  margin-right: 30px;
+  color: var(--accent-color);
+}
+
+.services .service-item .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.services .service-item .title a {
+  color: var(--heading-color);
+}
+
+.services .service-item .description {
+  line-height: 24px;
+  font-size: 14px;
+  margin: 0;
+}
+
+.services .service-item:hover {
+  border-color: var(--accent-color);
+}
+
+.services .service-item:hover .title a {
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Clients Section
+--------------------------------------------------------------*/
+.clients .swiper-slide img {
+  opacity: 0.5;
+  transition: 0.3s;
+  filter: grayscale(100);
+}
+
+.clients .swiper-slide img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+.clients .swiper-wrapper {
+  height: auto;
+}
+
+.clients .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.clients .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.clients .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio .portfolio-filters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio .portfolio-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 10px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-filters li:first-child {
+  margin-left: 0;
+}
+
+.portfolio .portfolio-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}
+
+.portfolio .portfolio-item {
+  position: relative;
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  background-color: color-mix(in srgb, var(--surface-color), transparent 10%);
+  opacity: 0;
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  padding: 15px;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link,
+.portfolio .portfolio-item .portfolio-info .details-link {
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  top: calc(50% - 14px);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  transition: 0.3s;
+  line-height: 0;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio .portfolio-item .portfolio-info .details-link:hover {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-item .portfolio-info .details-link {
+  right: 14px;
+  font-size: 28px;
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  bottom: 20px;
+}
+
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+.testimonials .testimonial-item {
+  background-color: var(--surface-color);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: content-box;
+  padding: 30px;
+  margin: 30px 15px;
+  position: relative;
+  height: 100%;
+}
+
+.testimonials .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50px;
+  margin-right: 15px;
+}
+
+.testimonials .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+.testimonials .testimonial-item h4 {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin: 0;
+}
+
+.testimonials .testimonial-item .stars {
+  margin: 10px 0;
+}
+
+.testimonials .testimonial-item .stars i {
+  color: #ffc107;
+  margin: 0 1px;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.testimonials .testimonial-item p {
+  font-style: italic;
+  margin: 15px auto 15px auto;
+}
+
+.testimonials .swiper-wrapper {
+  height: auto;
+}
+
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+@media (max-width: 767px) {
+  .testimonials .testimonial-wrap {
+    padding-left: 0;
+  }
+
+  .testimonials .testimonial-item {
+    padding: 30px;
+    margin: 15px;
+  }
+
+  .testimonials .testimonial-item .testimonial-img {
+    position: static;
+    left: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# Call To Action Section
+--------------------------------------------------------------*/
+.call-to-action {
+  position: relative;
+  clip-path: inset(0);
+}
+
+.call-to-action img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.call-to-action .container {
+  position: relative;
+  z-index: 3;
+}
+
+.call-to-action h3 {
+  color: var(--default-color);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.call-to-action p {
+  color: var(--default-color);
+}
+
+.call-to-action .cta-btn {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid var(--contrast-color);
+  color: var(--contrast-color);
+}
+
+.call-to-action .cta-btn:hover {
+  background: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.team .team-member {
+  background-color: var(--surface-color);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.team .team-member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .team-member .social {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  background: color-mix(in srgb, var(--background-color), transparent 20%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team .team-member .social a {
+  transition: color 0.3s;
+  color: var(--heading-color);
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team .team-member .social a i {
+  line-height: 0;
+}
+
+.team .team-member .social a:hover {
+  color: var(--accent-color);
+}
+
+.team .team-member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+.team .team-member .member-info {
+  padding: 25px 15px;
+  text-align: center;
+}
+
+.team .team-member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.team .team-member .member-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.team .team-member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.team .team-member:hover .social {
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Pricing Section
+--------------------------------------------------------------*/
+.pricing {
+  padding: 60px 0 120px 0;
+}
+
+.pricing .section-title {
+  margin-bottom: 40px;
+}
+
+.pricing .pricing-item {
+  background-color: var(--surface-color);
+  box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
+  padding: 60px 40px;
+  height: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+
+.pricing h3 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.pricing .icon {
+  margin: 30px auto 20px auto;
+  width: 70px;
+  height: 70px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  transform-style: preserve-3d;
+}
+
+.pricing .icon i {
+  color: var(--background-color);
+  font-size: 28px;
+  transition: ease-in-out 0.3s;
+  line-height: 0;
+}
+
+.pricing .icon::before {
+  position: absolute;
+  content: "";
+  height: 86px;
+  width: 86px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent-color), transparent 80%);
+  transition: all 0.3s ease-out 0s;
+  transform: translateZ(-1px);
+}
+
+.pricing .icon::after {
+  position: absolute;
+  content: "";
+  height: 102px;
+  width: 102px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  transition: all 0.3s ease-out 0s;
+  transform: translateZ(-2px);
+}
+
+.pricing h4 {
+  font-size: 48px;
+  color: var(--accent-color);
+  font-weight: 700;
+  font-family: var(--heading-font);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.pricing h4 sup {
+  font-size: 28px;
+}
+
+.pricing h4 span {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.pricing ul {
+  padding: 20px 0;
+  list-style: none;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  text-align: left;
+  line-height: 20px;
+}
+
+.pricing ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.pricing ul i {
+  color: #059652;
+  font-size: 24px;
+  padding-right: 3px;
+}
+
+.pricing ul .na {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.pricing ul .na i {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.pricing ul .na span {
+  text-decoration: line-through;
+}
+
+.pricing .buy-btn {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  display: inline-block;
+  padding: 8px 40px 10px 40px;
+  border-radius: 50px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  transition: none;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--heading-font);
+  transition: 0.3s;
+}
+
+.pricing .buy-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.pricing .featured {
+  z-index: 10;
+  border: 3px solid var(--accent-color);
+}
+
+@media (min-width: 992px) {
+  .pricing .featured {
+    transform: scale(1.15);
+  }
+}
+
+/*--------------------------------------------------------------
+# Faq Section
+--------------------------------------------------------------*/
+.faq .content h3 {
+  font-weight: 400;
+  font-size: 34px;
+}
+
+.faq .content p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.faq .faq-container .faq-item {
+  background-color: var(--surface-color);
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq .faq-container .faq-item h3 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 30px 0 0;
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+}
+
+.faq .faq-container .faq-item h3 .num {
+  color: var(--accent-color);
+  padding-right: 5px;
+}
+
+.faq .faq-container .faq-item h3:hover {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-item .faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq .faq-container .faq-item .faq-content p {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item .faq-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  line-height: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.faq .faq-container .faq-item .faq-toggle:hover {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-active h3 {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-active .faq-content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.faq .faq-container .faq-active .faq-toggle {
+  transform: rotate(90deg);
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-item+.info-item {
+  margin-top: 40px;
+}
+
+.contact .info-item i {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 20px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.contact .info-item h3 {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.contact .php-email-form {
+  height: 100%;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details Section
+--------------------------------------------------------------*/
+.portfolio-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+.portfolio-details .swiper-wrapper {
+  height: auto;
+}
+
+.portfolio-details .swiper-button-prev,
+.portfolio-details .swiper-button-next {
+  width: 48px;
+  height: 48px;
+}
+
+.portfolio-details .swiper-button-prev:after,
+.portfolio-details .swiper-button-next:after {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.15);
+  font-size: 24px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.portfolio-details .swiper-button-prev:hover:after,
+.portfolio-details .swiper-button-next:hover:after {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 575px) {
+
+  .portfolio-details .swiper-button-prev,
+  .portfolio-details .swiper-button-next {
+    display: none;
+  }
+}
+
+.portfolio-details .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.portfolio-details .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+}
+
+.portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-info h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  bottom: 0;
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.portfolio-details .portfolio-info ul strong {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 14px;
+}
+
+.portfolio-details .portfolio-info .btn-visit {
+  padding: 8px 40px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.portfolio-details .portfolio-info .btn-visit:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.portfolio-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item {
+  padding: 30px 30px 0 30px;
+  position: relative;
+  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  margin-bottom: 50px;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50px;
+  border: 6px solid var(--background-color);
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 5px 0;
+  padding-top: 20px;
+}
+
+.portfolio-details .portfolio-description .testimonial-item h4 {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-left,
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.portfolio-details .portfolio-description .testimonial-item p {
+  font-style: italic;
+  margin: 0 0 15px 0 0 0;
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Service Details Section
+--------------------------------------------------------------*/
+.service-details .services-list {
+  background-color: var(--surface-color);
+  padding: 10px 30px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  margin-bottom: 20px;
+}
+
+.service-details .services-list a {
+  display: block;
+  line-height: 1;
+  padding: 8px 0 8px 15px;
+  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  margin: 20px 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  transition: 0.3s;
+}
+
+.service-details .services-list a.active {
+  color: var(--heading-color);
+  font-weight: 700;
+  border-color: var(--accent-color);
+}
+
+.service-details .services-list a:hover {
+  border-color: var(--accent-color);
+}
+
+.service-details .services-img {
+  margin-bottom: 20px;
+}
+
+.service-details h3 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.service-details h4 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.service-details p {
+  font-size: 15px;
+}
+
+.service-details ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.service-details ul li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.service-details ul i {
+  font-size: 20px;
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Starter Section Section
+--------------------------------------------------------------*/
+.starter-section {
+  /* Add your styles here */
+}
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+
+          
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:elonapurba1103@gmail.com">elonapurba1103@gmail.com</a></i>
+          <i class="bi bi-instagram d-flex align-items-center ms-4"><a href="https://www.instagram.com/ell.prb">ell.prb       </a></i>
+          
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html"><h3 class="sitename"><img src="aset/logoseateacher.png" alt="University Logo" class="logo"> Elona's Sea Teacher Journey</h3>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">FEU</a></li>
+            <li><a href="#portfolio">Teaching</a></li>
+            <li><a href="#team">Profil</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <div class="info d-flex align-items-center">
+        <div class="container">
+          <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-8 text-center">
+              
+              <h2>Elona's <span>sea teacher</span> Journey</h2>
+              <h3>Elona’s Journey </h3>
+              <h4>SEA TEACHER, Batch 10</h4>
+              <h5>FEU Roosevelt, CAINTA, Philippines</h5>
+              <p>Selamat Datang! Welcome, Folks! Maligayang pagdating mga Kabayan!
+                Welcome to my blog! I'm excited to have you here.
+                </p>
+              <a href="#featured-services" class="btn-get-started">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="aset/elonateam5.jpg" alt="">
+        </div>
+
+        <div class="carousel-item">
+          <img src="aset/elonateam2.jpg" alt="">
+        </div>
+
+        <div class="carousel-item">
+          <img src="aset/elonateam3.jpg" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="aset/elonateam4.jpg" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="aset/elonateam.jpg" alt="">
+        </div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 2">
+            <img src="aset/elonaprofil.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 content">
+            <h3>Hello! My name is Elona Purba.</h3>
+            <p class="fst-italic">
+              I am currently a 4th year student at the University of Bengkulu, majoring in English Education. I have a passion for teaching and a strong desire to learn about various education systems and cultures.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span>I come from Medan City, where I completed my secondary education at SMA N 1 Pollung. My journey in education has been shaped by the experiences and mentors who have guided me along the way.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>I learned about the SEA Teacher Project through a friend who participated last year. Intrigued by their stories and experiences, I felt compelled to apply for this unique opportunity. With the support of my family, I embarked on this adventure to FEU Roosevelt College in the Philippines.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Through this program, I aim to improve my teaching skills by experiencing different educational practices.
+                Build connections with fellow educators from various countries in Southeast Asia.
+                Immerse myself in new cultures, gaining insights that will enrich my perspective as an educator.
+                </span></li>
+            </ul>
+            <p>
+              Thank you for visiting my blog! I hope you enjoy reading about my experiences and insights along this journey.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h3>FEU ROOSEVELT COLLEGE CAINTA, PHILIPPHINES</h3>
+        <div class="center-image">
+          <img src="aset/logofeu.png" class="img-fluid" alt="">
+      </div>
+        <p>Talk about FEU Roosevelt College Inc. (RCI) it feels less if you do not know about it. Here I will share a little knowledge about FEU Roosevelt College Inc. (RCI). FEU Roosevelt, formerly known as Roosevelt College, is a private, non-sectarian educational institution located in the northeastern area of Metro Manila, Philippines. Established in 1933 as Marikina Academy by former Mayor Wenceslao Dela Paz, it is one of the oldest academic institutions in the region. After closing in 1944 following Dela Paz's death, the school was reestablished as Roosevelt Memorial High School (RMHS) to address the lack of secondary education in Marikina during the postwar period. Over time, RMHS expanded to several locations and began offering tertiary programs, leading to its rebranding as Roosevelt College, Inc. (RCI).</p>
+        <div class="center-image">
+          <img src="aset/feuroosevelt.jpg" class="img-fluid" alt="">
+      </div>
+        <p>In 2016, RCI became part of the Far Eastern University (FEU) Group of Schools and was rebranded as FEU Roosevelt in 2019. The institution offers a comprehensive range of educational programs, including basic education and tertiary courses across its three campuses: Cainta, Marikina, and Rodriguez. The Cainta campus serves as the flagship location and houses programs from preschool through senior high school. The current president is Juan Miguel R. Montinola, with Alma Emerita Dela Cruz serving as Senior Vice President. The school’s colours are green and gold, and its mascot is Tam Tam, representing the Tamaraws, the school's nickname. The FEU Hymn by Nick Joaquin serves as the institution's anthem. With a commitment to academic excellence and cultural enrichment, FEU Roosevelt continues to play a significant role in education within the region.</p>
+        <div class="center-image">
+          <img src="aset/tamaraw.jpg" class="img-fluid" alt="">
+      </div>
+        <h6>Vision</h6>
+        <p>FEU Roosevelt envisions a productive and responsible citizenry empowered through education.</p>
+        <h6>Mission</h6>
+      </p>
+      <ul>
+        <li>Promotes the value of resilience through a dynamic curriculum and programs that advocate teamwork and collaboration.</li>
+        <li>Develops competence in lifelong learners; nurture their ability to be creative, critical thinkers, and effective communicators.</li>
+        <li>Instils integrity of mind, body, and spirit throughout its community.</li>
+      </ul>
+      <p>
+        <h6>Institutional Learning Outcomes</h6>
+        <ol>
+          <li><span>Demonstrate the ability to recognize, appreciate, and accept diverse learners and ideas.</span></li>
+          <li><span>Demonstrate the ability to respond and to be responsible for agreed tasks.</span></li>
+          <li><span>Demonstrate flexibility in dealing with changes and challenges in multiple modalities and in eliciting alternative perspectives.</span></li>
+          <li><span>Demonstrate the ability to be organized and systematic in acquiring and applying knowledge and skills.</span></li>
+          <li><span>Demonstrate the ability to utilize available resources for specific and significant needs.</span></li>
+          <li><span>Demonstrate the ability to confidently facilitate and engage in both oral and written communication.</span></li>
+          <li><span>Demonstrate the values of honesty and fairness in all undertakings through sound judgment.</span></li>
+          <li><span>Demonstrate the ability to live with a positive outlook in life.</span></li>
+          <li><span>Demonstrate the ability to engage in healthy physical activities.</span></li>
+          <li><span>Demonstrate an understanding of equality with diverse values, culture, and tradition.</span></li>
+        </ol>
+        
+        <h6>School Goals</h6>
+        <ul>
+          <li><span>To be recognized by various accrediting bodies in the Basic Education and Tertiary Education levels.</span></li>
+          <li><span>To make FEU Roosevelt Basic Education Programs known as a good preparatory school for college education and the FEU Roosevelt-TED, the Center of Excellence in tertiary education in Metro-Manila as well as in the province of Rizal.</span></li>
+          <li><span>To continuously develop Basic and Tertiary Education curricula responsive and relevant to the demands and needs of the time.</span></li>
+          <li><span>To develop the school image as a National Institution for all, irrespective of socio-economic status, religion, gender, and ethnic origin.</span></li>
+          <li><span>To graduate students who are well rounded and well equipped in quantitative and qualitative areas; students trained by rigorous teaching and coaching in all the required subject areas.</span></li>
+        </ul>
+        <h1>Campuses</h1>
+
+        <h2>Cainta</h2>
+        <p><strong>FEU Roosevelt Cainta</strong> was set up in 1974, when then Roosevelt Memorial High School was transferred from San Roque in Marikina to the sprawling Sumulong Highway campus. Aside from Basic Education programs from preschool to senior high school, the Cainta campus also houses FEU Roosevelt’s Institute for Teacher Education.</p>
+        <p>Address: 35 D Sumulong Hwy, Cainta, 1900 Rizal</p>
+        <p>Tel No: +632 8681-6210</p>
+        <p>CP No.: 0960-558-1885</p>
+    
+        <h2>Marikina</h2>
+        <p><strong>FEU Roosevelt Marikina</strong> is the oldest existing campus. It was built in 1967 as an elementary laboratory school for the Bachelor of Science in Elementary Education (BSEED) students to practice in. Today, the Marikina campus is the site of FEU Roosevelt’s newest building.</p>
+        <p>Address: J.P. Rizal St., Lamuan, Marikina City</p>
+        <p>Tel No: +632 8941-4093</p>
+        <p>CP No.: 0960-558-1889</p>
+    
+        <h2>Rodriguez</h2>
+        <p>The <strong>Rodriguez campus</strong> is FEU Roosevelt’s biggest campus in terms of population. It is also home to the school’s most talented athletes, who consistently bring pride to FEU Roosevelt in regional and national meets. FEU Roosevelt Rodriguez is also PAASCU-accredited.</p>
+        <p>Address: Lardizabal St., Brgy. Manggahan, Rodriguez, 1860 Rizal</p>
+        <p>Tel No: +632 8998-2489</p>
+        <p>CP No.: 0960-558-1892</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-bar-chart icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="feu.html" class="stretched-link">Academic Support System</a></h4>
+                <p class="description">FEU Roosevelt College in Cainta, Philippines, offers a robust academic support system designed to enhance student learning and development across various educational levels.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-binoculars icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="feu.html" class="stretched-link">Teaching System</a></h4>
+                <p class="description">FEU Roosevelt College in Cainta employs a modern and dynamic teaching system that integrates various educational strategies and technologies to enhance student learning.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-card-checklist icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="feu.html" class="stretched-link">Others</a></h4>
+                <p class="description">FEU Roosevelt College is committed not only to academic excellence but also to shaping individuals who positively contribute to society</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <h2>PEDAGOGICAL CONTENTS</h2>
+          <p>Pedagogical Contents at FEU Roosevelt College, Cainta
+            Based on my observation, here is a detailed report on the pedagogical contents observed at FEU Roosevelt College, Cainta, particularly focusing on the Grade 10 English curriculum.
+            </p>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-binoculars icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="feu.html" class="stretched-link">Teaching Methods</a></h4>
+                <p class="description">At FEU Roosevelt College in Cainta, the pedagogical approach in the Grade 10 English curriculum is characterized by a diverse range of teaching methods aimed at fostering an engaging and effective learning environment</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-brightness-high icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="feu.html" class="stretched-link">Learning Materials and Innovations</a></h4>
+                <p class="description">The learning materials used in the Grade 10 English classes are varied and innovative. Standardized textbooks are supplemented with workbooks that provide additional exercises tailored to reinforce learning</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-calendar4-week icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="feu.html" class="stretched-link">Sources of Learning and Technology </a></h4>
+                <p class="description">Technology plays a significant role in the teaching process at FEU Roosevelt College.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-calendar4-week icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="feu.html" class="stretched-link">Authentic Assessment</a></h4>
+                <p class="description">Assessment practices in Grade 10 English emphasize authentic assessments that reflect real-world applications</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-calendar4-week icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a href="feu.html" class="stretched-link">Others</a></h4>
+                <p class="description">In addition to these pedagogical strategies, FEU Roosevelt College places a strong emphasis on professional development for teachers through ongoing training programs that keep educators updated on innovative teaching strategies and educational technologies. </p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>TEACHING</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Plan</li>
+            <li data-filter=".filter-product">Practice</li>
+            <li data-filter=".filter-branding">Summary & Suggestions</li>
+            
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="aset/learning.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Curriculum</h4>
+                <p>The curriculum for the Grade 10 English class at FEU Roosevelt College is designed to align with the K-12 educational framework, focusing on developing students' language skills, critical thinking, and communication abilities.</p>
+                <a href="aset/learning.jpg" title="Curriculum" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="aset/teachingpractice.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Procedure of Teaching</h4>
+                <p>During my teaching practice at FEU Roosevelt College, I implemented a structured approach to teaching that emphasized clear procedures.</p>
+                <a href="teachingpractice.jpg" title="Procedure of Teaching" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="aset/purpose.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Purposes of Practicum</h4>
+                <p>The primary purpose of my practicum at FEU Roosevelt College was to gain practical experience in teaching English and to apply the theoretical knowledge acquired during my studies.</p>
+                <a href="aset/purpose.jpg" title="Purposes of Practicum" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="aset/learning2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Teaching Plan</h4>
+                <p>As an English major, my teaching plan for the Grade 10 English class focuses on enhancing students' proficiency in language arts through interactive and engaging lessons.</p>
+                <a href="aset/learning2.jpg" title="Teaching Plan" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="aset/teachingpractice2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Time Manegement and Organizing Activities</h4>
+                <p>I started my teaching at the third week after I got the observation and teaching assistants in the first and second week.</p>
+                <a href="aset/teachingpractice2.jpg" title="Time Manegement and Organizing Activities" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="aset/teachingmethod.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Procedures of Practicum</h4>
+                <p>During my practicum, I followed structured procedures that included planning lessons based on the English curriculum, preparing engaging materials, and utilizing various teaching strategies.</p>
+                <a href="aset/teachingmethod.jpg" title="Procedures of Practicum" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="aset/learning3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Lesson Plan</h4>
+                <p>I prepared a well-prepared lesson plan is essential for effective teaching and learning.</p>
+                <a href="aset/learning3.jpg" title="Lesson Plan" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="aset/teachingpractice3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Classroom Management</h4>
+                <p>Classroom management strategies were essential in creating a positive learning environment.</p>
+                <a href="aset/teachingpractice3.jpg" title="Classroom Management" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="aset/teaching2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Outcomes of Practicum</h4>
+                <p>The outcomes of my practicum were highly positive.</p>
+                <a href="aset/teaching2.jpg" title="Outcomes of Practicum" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="aset/learning.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Others</h4>
+                <p>In addition to the core components of the teaching plan, several other aspects are important for creating an effective learning environment.</p>
+                <a href="aset/learning.jpg" title="Others" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="aset/teachingpractice4.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Problem-Solving While Teaching and Staying in the Designated School</h4>
+                <p>Throughout my teaching practice, I encountered various challenges that required problem-solving skills.</p>
+                <a href="aset/teachingpractice4.jpg" title="Problem-Solving While Teaching and Staying in the Designated School" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="aset/learning6.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>The Challenges of Practicum</h4>
+                <p>Throughout my practicum, I encountered several challenges specific to teaching English.</p>
+                <a href="aset/learning6.jpg" title="The Challenges of Practicum" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="aset/impression.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Overall Impression</h4>
+                <p>Overall, my practicum experience was enriching and transformative.</p>
+                <a href="aset/impression.jpg" title="Overall Impression" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="teaching.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-9 text-center text-xl-start">
+            <h3>Closing</h3>
+            <p>Every meeting there will be separation. the thing I dislike the most is separation at each meeting. but it will definitely happen. Maybe when I first came to the Philippines, I experienced home sick because I felt unfamiliar with a new place and wanted to go home. But after meeting the people there who are very friendly and kind, I feel happy and comfortable there. Especially meeting my students in grade 10 confident. They are cheerful, friendly and fun that make my day very colourful there. They taught me several Tagalog languages and gave me a list of languages and sometimes shared their food, things with me.</p>
+          </div>
+          <div class="col-xl-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#">Call To Action</a>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Me</h2>
+        I learned about the SEA Teacher Project through a friend who participated last year. Intrigued by their stories and experiences, I felt compelled to apply for this unique opportunity. With the support of my family, I embarked on this adventure to FEU Roosevelt College in the Philippines.
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="aset/elonaprofil3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Elona Purba</h4>
+                <span>English Literature Study Program Student, University of Bengkulu</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /End Team Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>bengkulu City, 38122</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>0000 0000 0000</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>email.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h4 class="sitename">Elona's Sea Teacher Journey</h4>
+      <p>follow various resistance while in the Philippines </p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-skype"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Reveal</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
